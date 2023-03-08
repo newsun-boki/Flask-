@@ -15,7 +15,7 @@
                         {{ form.username(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.username.errors %}
-                                <span> {{ errors }} </span>
+                                <span> {{ error }} </span>
                             {% endfor %}
                         </div>
                     {% else %}
@@ -40,7 +40,7 @@
                     {% if form.password.errors %}
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for errors in form.password.errors %}
+                            {% for error in form.password.errors %}
                                 <span> {{ error }} </span>
                             {% endfor %}
                         </div>
@@ -66,12 +66,13 @@
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                <!-- url_for中代表route对应的名字 -->
-                Already Have An Account? <a class="ml-2" href="url_for('login')"> Sign In </a>
-            </small>
-
-        </div>
     </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <!-- url_for中代表route对应的名字 -->
+            Already Have An Account? <a class="ml-2" href="url_for('login')"> Sign In </a>
+        </small>
+
+    </div>
+    
 {% endblock content %}
